@@ -1,0 +1,56 @@
+body{
+    background-color: #1f242d;
+    color: white;
+}
+.game-name{
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    color: aqua;
+}
+
+.move-button{
+    background-color: transparent;
+    border: 3px solid #0d6efd;  
+    border-radius: 30px;
+    cursor: pointer;
+}
+.move-icon{
+    height: 200px;
+}
+
+.result-icon{
+    width: 200px;
+}
+
+.result-icon-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.result{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.score{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
+  }
+
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin-top: auto; /* Push the footer to the bottom */
+  }
