@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
+    <style>
+
+        @media (width <=900px) {
+            .col-xs-6 {
+                flex: 0 0 auto;
+                width: 50%;
+            }
+            .col-xs-12 {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+            .col-xs-3 {
+                flex: 0 0 auto;
+                width: 25%;
+            }
+            .move-icon{
+                height: 100px;
+            }
+            .footer {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 300px) {
+            .order-sm-1 {
+                order: 1 !important;
+            }
+            .order-sm-2 {
+                order: 2 !important;
+            }
+            .order-sm-3 {
+                order: 3 !important;
+            }
+            .order-sm-4 {
+                order: 4 !important;
+            }
+        }
+        @media (width > 900px){
+            .result-icon-box{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="col-sm">
+            <p class="game-name text-center">Rock Paper Scissors</p>
+        </div>
+    </div>
+
+
+    <div class="container py-3 ">
+        <div class="row gy-3">
+            <div class="d-grid gap-2 col-lg-4 col-md-6 col-xs-6 mx-auto">
+                <button class="move-button" onclick="
+                    playGame('rock');
+                "><img class="move-icon" src="images/rock-emoji.png"></button>
+            </div>
+
+            <div class="d-grid gap-2 col-lg-4 col-md-6 col-xs-6">
+                <button class="move-button" onclick="
+                        playGame('paper');
+                   "><img class="move-icon" src="images/paper-emoji.png"></button>
+            </div>
+
+            <div class="d-grid gap-2 col-lg-4 mx-auto">
+                <button class="move-button" onclick="
+                    playGame('scissors');
+               "><img class="move-icon" src="images/scissors-emoji.png"></button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container py-3 ">
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="js-result result text-center"></p>
+            </div>   
+        </div>
+    </div>
+
+    <div class="container  js-moves">
+    </div>
+
+    <div class="container ">
+        <div class="col">
+            <p class="js-score score text-center"></p>
+        </div>
+    </div>
+        
+
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary reset-score-button" type="button" onclick="
+        score.losses=0;
+        score.ties=0;
+        score.wins=0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        ">Reset Score</button>
+    </div>
+
+
+    <!--Footer design-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Fred Pekyi | All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/bootstrap.js"></script>
+    <script src="scripts/10-rock-paper-scissors.js"></script>
+</body>
+
+</html>
