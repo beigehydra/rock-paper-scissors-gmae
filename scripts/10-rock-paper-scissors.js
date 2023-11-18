@@ -23,7 +23,7 @@
         intervalId = setInterval(() => {
         const playerMove = pickComputerMove();
         playGame(playerMove);
-        }, 2000);
+        }, 1500);
         isAutoPlaying = true;
 
     } else {
