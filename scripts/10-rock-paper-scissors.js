@@ -60,6 +60,7 @@
                 score.ties += 1;
             }
 
+
             //we can also save our string into the local storage by doing this
             localStorage.setItem('score', JSON.stringify(score));
 
@@ -67,18 +68,32 @@
 
             document.querySelector('.js-result').innerHTML = result;
 
+            
             document.querySelector('.js-moves').innerHTML = 
-            `<div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-6 order-sm-1 order-md-1 "><h5 class="text-center">You</h5></div>
-            <div class="col-lg-6 col-md-6 col-xs-6 order-sm-3 order-md-3 align-items-center"><div class="row result-icon-box"><img class="result-icon" src="images/${playerMove}-emoji.png"></div></div>
-            <div class="col-lg-6 col-md-6 col-xs-6 order-sm-4 order-md-4 align-items-center"><div class="row result-icon-box"><img class="result-icon" src="images/${computerMove}-emoji.png"></div></div>
-            <div class="col-lg-6 col-md-6 col-xs-6 order-sm-2 order-md-2"><h5 class="text-center">Computer</h5></div>
+            `<div id="result" class="row score-box animated-text">
+            <div ><h5 class="text-center">You</h5></div>
+            <div ><h5 class="text-center">Computer</h5></div>
+            <div class="result-icon-box"><img class="result-icon" src="images/${playerMove}-emoji.png"></div>
+            <div class="result-icon-box"><img class="result-icon" src="images/${computerMove}-emoji.png"></div>
             </div>`
+
+             //start of animation code
+             const resultContainer = document.getElementById('result-container');
+
+             document.querySelectorAll('.activate-button').forEach(function (button) {
+                 button.addEventListener('click', function () {
+                     resultContainer.classList.remove('animated-container');
+                     void resultContainer.offsetWidth;
+                     resultContainer.classList.add('animated-container');
+                 });
+             });
+        //end of animation code
 
             
             
         }
 
+       
         function updateScoreElement(){
             document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.`
 
