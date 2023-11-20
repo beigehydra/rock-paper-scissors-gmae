@@ -1,6 +1,7 @@
 body{
     background-color: #1f242d;
     color: white;
+    height: 100vh;
 }
 
 .game-name{
@@ -14,6 +15,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 auto 0;
 }
 
 .js-win-text{
@@ -160,6 +162,7 @@ body {
         display: grid;
             grid-template-columns: 1fr 1fr;
             row-gap: 8px;
+            margin: 0 auto 0;
 
     }
     .scissors-emoji{
