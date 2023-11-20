@@ -16,6 +16,15 @@ body{
     justify-content: space-between;
 }
 
+.js-win-text{
+    font-size: 140%;
+    color: greenyellow;
+    text-shadow: 0 0 20px greenyellow; /* Add the glowing effect */
+}
+.js-lose-text{
+    color: red;
+}
+
 
 
 .move-button{
@@ -41,7 +50,7 @@ body{
 }
 
 .result-icon {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -127,10 +136,7 @@ body {
   }
 
   
-  @media (width <=900px) {
-      .footer {
-    margin-top: 100px; /* Push the footer to the bottom */
-  }
+  @media (width <=62.5rem) {
     .col-xs-6 {
         flex: 0 0 auto;
         width: 50%;
@@ -166,22 +172,20 @@ body {
     }
 }
 
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@media(width > 56.25rem){
+    .result-icon{
+        max-width: 25%;
     }
 }
+
+
+
 
 .animated-text {
     opacity: 0;
     animation: fadeIn 1s ease-in-out;
     animation-fill-mode: forwards; /* Retain styles after animation completes */
+    
 }
 
 @keyframes fadeIn {
@@ -198,3 +202,9 @@ body {
 .animated-win-text {
     animation: fadeIn 1s ease-in-out;
 }
+
+.animated-text {
+    font-size: 0; /* Initial font size set to 0 */
+    transition: font-size 0.5s ease-in-out; /* Transition property */
+    overflow: hidden; /* Hide overflowing text */
+  }
